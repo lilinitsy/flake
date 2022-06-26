@@ -87,7 +87,13 @@
   # Allow some proprietary programs.
   nixpkgs.config.allowUnfreePredicate = pkg:
     let name = pkgs.lib.getName pkg;
-    in builtins.elem name [ "discord" "nvidia-settings" "nvidia-x11" "zoom" ];
+    in builtins.elem name [
+      "discord"
+      "nvidia-settings"
+      "nvidia-x11"
+      "slack"
+      "zoom"
+    ];
 
   programs = {
     git = {

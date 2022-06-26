@@ -41,6 +41,7 @@
       pkgs.noto-fonts-emoji
       pkgs.pavucontrol
       pkgs.pinentry-gtk2 # for GPG to prompt for passwords
+      pkgs.slack
       pkgs.vlc
       pkgs.xfce.xfce4-terminal
       pkgs.zathura
