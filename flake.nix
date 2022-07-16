@@ -6,7 +6,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
-    nixpkgs.url = "github:NixOS/nixpkgs";
+    # nixpkgs.url = "github:NixOS/nixpkgs";
   };
   outputs = { self, flake-utils, home-manager, nixpkgs }@inputs: {
     nixosConfigurations.cs-hmd16b-umh-nixos = nixpkgs.lib.nixosSystem {

@@ -46,6 +46,8 @@
   hardware = {
     cpu.intel.updateMicrocode = true;
     i2c.enable = true;
+    opengl.extraPackages = [ pkgs.vaapiVdpau ];
+    nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
     pulseaudio.enable = true;
   };
 
@@ -74,8 +76,8 @@
 
   nix = {
     extraOptions = ''
-      # Enable flakes.
-      experimental-features = flakes
+      # Enable flakes and nix(1).
+      experimental-features = flakes nix-command
 
       # Prevent direnv/nix-shell/nix develop environments from getting GC'd.
       keep-derivations = true
@@ -89,9 +91,11 @@
     let name = pkgs.lib.getName pkg;
     in builtins.elem name [
       "discord"
+      "google-chrome"
       "nvidia-settings"
       "nvidia-x11"
       "slack"
+      "vscode"
       "zoom"
     ];
 
@@ -149,8 +153,12 @@
       desktopManager = {
         xfce.enable = true;
         xterm.enable = false;
+        gnome.enable = true;
       };
-      displayManager.defaultSession = "xfce";
+      displayManager = {
+        gdm.enable = true;
+        defaultSession = "gnome";
+      };
       videoDrivers = [ "nvidia" "modesetting" ];
     };
   };
@@ -162,8 +170,15 @@
   users.users.admin = {
     isNormalUser = true;
     description = "Admin";
-    extraGroups =
-      [ "dialout" "i2c" "networkmanager" "video" "wheel" "wireshark" ];
+    extraGroups = [
+      "dialout"
+      "i2c"
+      "plugdev"
+      "networkmanager"
+      "video"
+      "wheel"
+      "wireshark"
+    ];
     shell = pkgs.zsh;
   };
 

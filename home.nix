@@ -10,14 +10,20 @@
       set history filename ~/.gdb_history
     '';
     packages = [
+      # clang
+      pkgs.clang-tools
+
       # debugging tools
       pkgs.gdb
       pkgs.strace
       pkgs.valgrind
 
       # graphics stuff
+      pkgs.ffmpeg-full
       pkgs.mesa-demos
       pkgs.renderdoc
+      pkgs.shaderc
+      pkgs.nv-codec-headers-11
       pkgs.vulkan-tools
       pkgs.vulkan-tools-lunarg
       pkgs.vulkan-validation-layers
@@ -36,6 +42,8 @@
       # X stuff
       pkgs.arandr
       pkgs.discord
+      pkgs.google-chrome
+      pkgs.hexchat
       pkgs.noto-fonts
       pkgs.noto-fonts-cjk
       pkgs.noto-fonts-emoji
@@ -43,6 +51,7 @@
       pkgs.pinentry-gtk2 # for GPG to prompt for passwords
       pkgs.slack
       pkgs.vlc
+      pkgs.vscode
       pkgs.xfce.xfce4-terminal
       pkgs.zathura
       pkgs.zoom-us
