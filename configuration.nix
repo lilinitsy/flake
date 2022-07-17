@@ -47,7 +47,7 @@
     cpu.intel.updateMicrocode = true;
     i2c.enable = true;
     opengl.extraPackages = [ pkgs.vaapiVdpau ];
-    nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+    nvidia.package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
     pulseaudio.enable = true;
   };
 
