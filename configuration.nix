@@ -100,6 +100,7 @@
     ];
 
   programs = {
+    adb.enable = true;
     git = {
       config = {
         alias.lg =
@@ -171,9 +172,9 @@
     isNormalUser = true;
     description = "Admin";
     extraGroups = [
+      "adbusers"
       "dialout"
       "i2c"
-      "plugdev"
       "networkmanager"
       "video"
       "wheel"
