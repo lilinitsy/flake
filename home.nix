@@ -10,6 +10,9 @@
       set history filename ~/.gdb_history
     '';
     packages = [
+      # system-wide android
+      pkgs.android-studio
+
       # clang
       pkgs.clang-tools
 
