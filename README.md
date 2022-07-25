@@ -2,12 +2,16 @@
 
 ## Notes
 
-### Update the configuration
+### Apply changes to the configuration
 
 - Run `nixos-rebuild build --flake . --print-build-logs` to try building the configuration
 - Assuming it succeeds, run `sudo nixos-rebuild switch --flake .` to switch to the configuration you built
   - If you skip the build step, it'll build it automatically
   - If you want it to take effect next boot (which you might, if you're making invasive changes), you can run `sudo nixos-rebuild boot --flake .`
+
+### Update the repos
+
+- Run `nix flake update`
 
 ### Install a package system-wide
 
