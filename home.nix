@@ -23,6 +23,7 @@
 
       # graphics stuff
       pkgs.ffmpeg-full
+      pkgs.gimp
       pkgs.mesa-demos
       pkgs.renderdoc
       pkgs.shaderc

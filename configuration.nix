@@ -90,6 +90,7 @@
   nixpkgs.config.allowUnfreePredicate = pkg:
     let name = pkgs.lib.getName pkg;
     in builtins.elem name [
+      "android-studio-stable"
       "discord"
       "google-chrome"
       "nvidia-settings"
